@@ -1,0 +1,18 @@
+<h1>
+  {{typeString}} une tâche
+</h1>
+
+<table>
+  <tr>
+    <td><label>Nom de la tâche : </label></td>
+    <td><input type="text" [(ngModel)]="tache.nom"/></td>
+  </tr>
+  <tr>
+    <td><label>Description de la tâche : </label></td>
+    <td><textarea [(ngModel)]="tache.description" class="textArea"></textarea></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button type="button" (click)="save()">Enregistrer</button></td>
+  </tr>
+</table>

@@ -1,0 +1,28 @@
+<h1>
+  Liste des tâches <button class="favorite styled" type="button" (click)="goToAdd()">Ajouter une tâche</button>
+</h1>
+
+<span *ngIf="tacheService.taches.length == 0">
+  Aucune tâche
+</span>
+
+<span *ngIf="tacheService.taches.length > 0">
+<table>
+  <thead>
+  <tr>
+    <th>Nom de la tâche</th>
+    <th>Description de la tâche</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tache of tacheService.taches; let i = index">
+    <td>{{tache.nom}}</td>
+    <td>{{tache.description}}</td>
+    <td><button class="buttonInCell" type="button" (click)="modifier(i)">Modifier</button></td>
+    <td><button class="buttonInCell" type="button" (click)="supprimer(i)">Supprimer</button></td>
+  </tr>
+  </tbody>
+</table>
+</span>
